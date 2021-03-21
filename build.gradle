@@ -1,7 +1,18 @@
-subprojects {
+plugins {
+	id "org.sonarqube" version "2.6.2" apply false
+}
+
+subprojects { subproject ->
   apply plugin: 'java'
+  apply plugin: 'org.sonarqube'
+  apply plugin: 'eclipse'
+  apply plugin: 'jacoco'
 
   repositories {
     jcenter()
+  }
+  dependencies{
+  	testCompile group: 'junit', name: 'junit', version: '4.12'
+  	testCompile group: 'org.mockito', name: 'mockito-core', version: '2.+' 
   }
 }

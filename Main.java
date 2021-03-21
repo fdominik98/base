@@ -1,8 +1,11 @@
+import java.util.Timer;
+import java.util.TimerTask;
+
 import hu.bme.mit.train.system.TrainSystem;
 
 public class Main{
 
-  Timer timer = new Timer("Timer");
+  static Timer timer = new Timer("Timer");
 
 
   public static void main(String[] arg){
@@ -15,7 +18,7 @@ public class Main{
         system.getController().followSpeed();
       }
     };
-    timer.schedule(task, 0, 0.5);
+    timer.schedule(task, 0, 500);
 
   }  
 
